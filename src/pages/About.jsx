@@ -1,46 +1,77 @@
-import React from 'react'
+import React from "react";
+import anu_dii from "../assets/anu_dii.jpg";
+import verify_icon from "../assets/verify_icon.png";
 
-const About = () => {
+const DoctorDetails = () => {
+  const consultationFee = "₹500";
+
   return (
-    <div>
-      <div className='text-center text-2xl pt-10 text-gray-500'>
-        <p>ABOUT <span className='text-gray-700 font-medium'>US</span></p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col items-center px-6 py-12">
+      
+      {/* Doctor Profile Card */}
+      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-4xl w-full flex flex-col md:flex-row items-start gap-8">
+        
+        {/* Doctor Image */}
+        <div className="flex-shrink-0 relative">
+          <img
+            src={anu_dii}
+            alt="Dr. Anu Barwal"
+            className="w-64 h-72 object-cover rounded-xl shadow-md border-4 border-blue-100"
+          />
 
-      <div className='my-10 flex flex-col md:flex-row gap-12'>
-        <img className='w-full md:max-w-[360px]' src="/path-to-your-image.jpg" alt="About us"/>
-        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
-          <p>Welcome to Prescripto, your trusted partner in managing your healthcare needs conveniently and efficiently. At Prescripto, we understand the challenges individuals face when it comes to scheduling doctor appointments and managing their health records. Our mission is to simplify this process by providing a user-friendly platform that connects patients with healthcare professionals seamlessly.</p>
+          <img
+            src={verify_icon}
+            alt="Verified"
+            className="w-10 h-10 absolute -bottom-3 -right-3"
+          />
+        </div>
 
-          <p>Prescripto is committed to excellence in healthcare technology. We continuously strive to enhance our platform, integrating the latest advancements to improve user experience and deliver superior service. Whether you're booking your first appointment or managing ongoing care, Prescripto is here to support you every step of the way.</p>
-          
-          <b className='text-gray-800'>Our Vision</b>
-          <p>Our vision at Prescripto is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, when you need it.</p>
+        {/* Doctor Information */}
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            Dr. Anu Barwal
+          </h1>
+
+          <p className="text-blue-600 font-medium mb-4">
+            BAMS, MD – Ayurveda (KAYACHIKITSA)
+            <br />
+            Experience in Ayurvedic Practice: 2+ years
+          </p>
+
+          <h2 className="text-xl font-semibold text-gray-700 mb-3">
+            About Me:
+          </h2>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            Ayurvedic physician dedicated to restoring health and balance 
+            through authentic Ayurveda. Specialized in managing lifestyle 
+            and metabolic disorders with a holistic, patient-centered approach.
+          </p>
+
+          <h2 className="text-xl font-semibold text-gray-700 mb-3">
+            Specializations:
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+            <li>Musculoskeletal and joint disorders</li>
+            <li>Neurological and psychiatric disorders</li>
+            <li>Diabetes & Prediabetes</li>
+            <li>Obesity & Metabolic Disorders</li>
+            <li>Thyroid Imbalance</li>
+            <li>Women's Health</li>
+            <li>Preventive & Wellness Care</li>
+          </ul>
+
+          {/* Consultation Fee */}
+          <div className="bg-green-50 border-l-4 border-green-500 p-4">
+            <p className="text-lg font-semibold text-gray-800">
+              Consultation Fee:{" "}
+              <span className="text-green-600">{consultationFee}</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className='text-xl my-4'>
-        <p>WHY <span className='text-gray-700 font-semibold'>CHOOSE US</span></p>
-      </div>
-
-      <div className="flex flex-col md:flex-row mb-20">
-        <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
-          <b>Efficiency:</b>
-          <p>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
-        </div>
-
-        <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
-          <b>Convenience:</b>
-          <p>Access to a network of trusted healthcare professionals in your area.</p>
-        </div>
-
-        <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
-          <b>Personalization:</b>
-          <p>Tailored recommendations and reminders to help you stay on top of your health.</p>
-        </div>
-      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default DoctorDetails;

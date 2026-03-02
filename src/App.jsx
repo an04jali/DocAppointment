@@ -11,22 +11,29 @@ import Appointment from './pages/Appointment';
 import Navbar from './components/Navbar';
 import DoctorDetails from './pages/DoctorDetails';
 import Footer from './components/Footer';
+import Payment from "./pages/Payment";
 
 const App = () => {
   return (
-    <div className='mx-4 sm:mx-[10%]'>
+    <div className='min-h-screen flex flex-col'>
+      
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/doctors' element={<Doctors />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/my-profile' element={<MyProfile />} />
-        <Route path='/my-appointments' element={<MyAppointments />} />
-        <Route path='/appointment/:Id' element={<Appointment />} />
-        <Route path='/doctor-details' element={<DoctorDetails />} />
-      </Routes>
+
+      <div className="flex-grow">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/doctors' element={<Doctors />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/my-profile' element={<MyProfile />} />
+          <Route path='/my-appointments' element={<MyAppointments />} />
+          <Route path='/appointment/:Id' element={<Appointment />} />
+          <Route path='/doctor-details' element={<DoctorDetails />} />
+          <Route path='/payment' element={<Payment />} />
+        </Routes>
+      </div>
+
       <Footer />
     </div>
   );
